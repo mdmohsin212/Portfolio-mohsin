@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@300;400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-dark-bg text-gray-200 font-body overflow-x-hidden;
+    background-image: radial-gradient(circle at 25% 25%, rgba(0, 240, 255, 0.05) 0%, rgba(0, 240, 255, 0) 25%),
+                      radial-gradient(circle at 75% 75%, rgba(143, 0, 255, 0.05) 0%, rgba(143, 0, 255, 0) 25%);
+  }
+  ::selection {
+    @apply bg-neon-cyan/50 text-white;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-dark-bg/50;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-neon-cyan rounded-full transition-all;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-neon-violet;
+  }
+}
+
+/* Helper class for holographic borders */
+.holographic-border {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to right, #8F00FF, #00F0FF);
+  position: relative;
+}
+
+.holographic-border::before,
+.holographic-border::after {
+  content: '';
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #00F0FF;
+  box-shadow: 0 0 10px #00F0FF;
+}
+.holographic-border::before { top: -4px; left: -4px; }
+.holographic-border::after { bottom: -4px; right: -4px; }
