@@ -14,12 +14,12 @@ import { FaBrain, FaCode } from "react-icons/fa";
 
 export const projects = [
   {
-    name: "CodeInsight",
-    github: "https://github.com/mdmohsin212/CodeInsight",
-    live: "https://mohsin416-codeinsight.hf.space",
+    name: "Visual Product Search",
+    github: "https://github.com/mdmohsin212/Visual-Product-Search",
+    live: "https://mohsin416-visual-products.hf.space",
     description:
-      "An AI-powered code assistant that helps developers understand, document, and optimize source code using LLMs.",
-    tech: ["LLMs", "NLP", "Flask", "Hugging Face"],
+      "A computer vision-based system that allows users to search for products using images, powered by CNNs.",
+    tech: ["Computer Vision", "CNNs", "TensorFlow", "Flask"],
   },
   {
     name: "Lawverse",
@@ -30,12 +30,12 @@ export const projects = [
     tech: ["NLP", "PyTorch", "Gradio", "RAG"],
   },
   {
-    name: "Visual Product Search",
-    github: "https://github.com/mdmohsin212/Visual-Product-Search",
-    live: "https://mohsin416-visual-products.hf.space",
+    name: "CodeInsight",
+    github: "https://github.com/mdmohsin212/CodeInsight",
+    live: "https://mohsin416-codeinsight.hf.space",
     description:
-      "A computer vision-based system that allows users to search for products using images, powered by CNNs.",
-    tech: ["Computer Vision", "CNNs", "TensorFlow", "Flask"],
+      "An AI-powered code assistant that helps developers understand, document, and optimize source code using LLMs.",
+    tech: ["LLMs", "NLP", "Flask", "Hugging Face"],
   },
 ];
 

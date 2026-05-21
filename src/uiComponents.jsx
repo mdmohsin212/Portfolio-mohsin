@@ -176,7 +176,7 @@ export const Navbar = () => {
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, delay: 3 }}
+      transition={{ duration: 0.5, delay: 0 }}
     >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <a

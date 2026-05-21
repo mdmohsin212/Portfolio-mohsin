@@ -88,7 +88,7 @@ export const ParticleBackground = () => {
       className="fixed top-0 left-0 w-full h-full z-[-1]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      transition={{ duration: 1.5, delay: 3.5 }}
+      transition={{ duration: 0, delay: 0 }}
     >
       <TParticles id="tsparticles" options={options} />
     </motion.div>
@@ -191,7 +191,7 @@ export const Background3DScene = () => (
     className="fixed top-0 left-0 w-full h-full z-[-2]"
     initial={{ opacity: 0 }}
     animate={{ opacity: 1 }}
-    transition={{ duration: 1.5, delay: 3.5 }}
+    transition={{ duration: 0, delay: 0 }}
   >
     <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
       <Suspense fallback={null}>

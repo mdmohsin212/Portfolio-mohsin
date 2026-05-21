@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -21,61 +21,6 @@ import {
   ExperienceCard,
 } from "./uiComponents.jsx";
 
-const Loader = ({ onLoaded }) => {
-  const [dots, setDots] = useState("");
-
-  useEffect(() => {
-    document.body.style.overflow = "hidden";
-
-    const dotInterval = setInterval(() => {
-      setDots((d) => (d.length >= 3 ? "" : d + "."));
-    }, 500);
-
-    const loadTimer = setTimeout(() => {
-      clearInterval(dotInterval);
-    }, 2300);
-
-    return () => {
-      clearInterval(dotInterval);
-      clearTimeout(loadTimer);
-    };
-  }, []);
-
-  const handleAnimationComplete = () => {
-    document.body.style.overflow = "auto";
-    onLoaded();
-  };
-
-  return (
-    <motion.div
-      className="fixed inset-0 z-[9999] flex flex-col items-center justify-center bg-dark-bg"
-      initial={{ opacity: 1 }}
-      animate={{ opacity: 0 }}
-      transition={{ delay: 1.5, duration: 0.5 }}
-      onAnimationComplete={handleAnimationComplete}
-    >
-      <motion.div
-        className="text-2xl sm:text-4xl font-sans font-bold text-neon-cyan"
-        animate={{ opacity: [0.5, 1, 0.5] }}
-        transition={{ repeat: Infinity, duration: 1.0 }}
-      >
-        M O H S I N
-      </motion.div>
-      <div className="w-64 h-1 bg-neon-cyan/20 mt-6 rounded-full overflow-hidden">
-        <motion.div
-          className="h-full bg-neon-cyan shadow-holographic"
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 1.5, ease: "linear" }}
-        />
-      </div>
-      <p className="mt-4 text-gray-300 font-body text-lg">
-        Booting AI System{dots}
-      </p>
-    </motion.div>
-  );
-};
-
 const Hero = () => (
   <section
     id="home"
@@ -86,7 +31,7 @@ const Hero = () => (
         className="text-center z-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 3.2 }}
+        transition={{ duration: 0.8, delay: 0}}
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white mb-4">
           Hi, I’m <span className="text-neon-cyan">Mohsin</span>
@@ -283,27 +228,20 @@ const Contact = () => (
 );
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
   return (
     <div className="relative">
-      {loading && <Loader onLoaded={() => setLoading(false)} />}
-      {!loading && (
-        <>
-          <Background3DScene />
-          <ParticleBackground />
-          <NeonCursor />
-          <Navbar />
-          <main>
-            <Hero />
-            <Projects />
-            <About />
-            <Experience />
-            <Contact />
-          </main>
-          <Footer />
-        </>
-      )}
+      <Background3DScene />
+      <ParticleBackground />
+      <NeonCursor />
+      <Navbar />
+      <main>
+        <Hero />
+        <Projects />
+        <About />
+        <Experience />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
 }
