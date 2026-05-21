@@ -46,34 +46,40 @@ export const ParticleBackground = () => {
     },
     particles: {
       color: {
-        value: ["#00F0FF", "#8F00FF"],
+        value: ["#00F0FF", "#8F00FF", "#ffffff"],
       },
       links: {
-        color: "#ffffff",
-        distance: 150,
+        color: "#00F0FF",
+        distance: 140,
         enable: true,
-        opacity: 0.1,
+        opacity: 0.08,
         width: 1,
       },
       move: {
         enable: true,
-        speed: 0.5,
+        speed: 0.35,
+        direction: "none",
+        random: true,
+        straight: false,
+        outModes: {
+          default: "out",
+        },
       },
       number: {
         density: {
           enable: true,
-          value_area: 800,
+          value_area: 900,
         },
-        value: 50,
+        value: 45,
       },
       opacity: {
-        value: 0.2,
+        value: { min: 0.12, max: 0.28 },
       },
       shape: {
         type: "circle",
       },
       size: {
-        value: { min: 1, max: 3 },
+        value: { min: 1, max: 2.5 },
       },
     },
     detectRetina: true,
@@ -128,6 +134,7 @@ const NeuralNetworkParticles = (props) => {
 };
 
 const DigitalBrainScene = () => {
+  const groupRef = useRef();
   const coreRef = useRef();
   const starsRef = useRef();
   const { viewport } = useThree();
@@ -166,19 +173,23 @@ const DigitalBrainScene = () => {
         <Sphere args={[1, 64, 64]}>
           <MeshDistortMaterial
             color="#00F0FF"
-            distort={distort}
-            speed={speed}
-            roughness={0.1}
-            metalness={0.8}
+            distort={0.25}
+            speed={1.2}
+            roughness={0.2}
+            metalness={0.7}
+            transparent
+            opacity={0.22}
           />
         </Sphere>
         <Sphere args={[0.7, 64, 64]}>
           <MeshDistortMaterial
             color="#8F00FF"
-            distort={distort}
-            speed={speed}
-            roughness={0.1}
-            metalness={0.8}
+            distort={0.3}
+            speed={1.4}
+            roughness={0.2}
+            metalness={0.7}
+            transparent
+            opacity={0.18}
           />
         </Sphere>
       </mesh>

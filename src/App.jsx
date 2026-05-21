@@ -24,7 +24,7 @@ import {
 const Hero = () => (
   <section
     id="home"
-    className="min-h-screen flex items-center justify-center relative pt-20"
+    className="min-h-[82vh] flex items-center justify-center relative pt-20"
   >
     <div className="container mx-auto px-4 grid grid-cols-1 items-center gap-8">
       <motion.div
