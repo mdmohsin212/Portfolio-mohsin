@@ -138,16 +138,23 @@ const DigitalBrainScene = () => {
   const coreRef = useRef();
   const starsRef = useRef();
   const { viewport } = useThree();
-  const [distort] = useState(0.4);
-  const [speed] = useState(2);
 
   const scale = Math.min(viewport.width, viewport.height) / 5;
 
   useFrame((state, delta) => {
+    if (groupRef.current) {
+      groupRef.current.rotation.y +=
+        (state.mouse.x * 0.25 - groupRef.current.rotation.y) * 0.03;
+
+      groupRef.current.rotation.x +=
+        (-state.mouse.y * 0.15 - groupRef.current.rotation.x) * 0.03;
+    }
+
     if (starsRef.current) {
       starsRef.current.rotation.y += delta * 0.02;
       starsRef.current.rotation.x += delta * 0.01;
     }
+
     if (coreRef.current) {
       coreRef.current.rotation.y += delta * 0.1;
       coreRef.current.rotation.x += delta * 0.05;
@@ -155,7 +162,7 @@ const DigitalBrainScene = () => {
   });
 
   return (
-    <group>
+    <group ref={groupRef}>
       <Stars
         ref={starsRef}
         radius={100}
@@ -169,7 +176,7 @@ const DigitalBrainScene = () => {
 
       <NeuralNetworkParticles />
 
-      <mesh ref={coreRef} scale={scale}>
+      <group ref={coreRef} scale={scale}>
         <Sphere args={[1, 64, 64]}>
           <MeshDistortMaterial
             color="#00F0FF"
@@ -181,6 +188,7 @@ const DigitalBrainScene = () => {
             opacity={0.22}
           />
         </Sphere>
+
         <Sphere args={[0.7, 64, 64]}>
           <MeshDistortMaterial
             color="#8F00FF"
@@ -192,7 +200,7 @@ const DigitalBrainScene = () => {
             opacity={0.18}
           />
         </Sphere>
-      </mesh>
+      </group>
     </group>
   );
 };
