@@ -31,7 +31,7 @@ const Hero = () => (
         className="text-center z-10"
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0}}
+        transition={{ duration: 0.8, delay: 0 }}
       >
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-sans font-bold text-white mb-4">
           Hi, I’m <span className="text-neon-cyan">Mohsin</span>
@@ -46,12 +46,13 @@ const Hero = () => (
           <AnimatedButton href="#projects" icon={<FaCode />}>
             View My Projects
           </AnimatedButton>
+
           <AnimatedButton
-            href={socialLinks.huggingface}
-            icon={<SiHuggingface />}
             className="border-neon-violet text-neon-violet bg-neon-violet/10"
+            href="https://drive.google.com/file/d/1oKj362iii6p0zQ-KL1rd2Xl6YfzWzSim/view?usp=sharing"
+            icon={<FaRocket />}
           >
-            Explore on Hugging Face
+            Download Resume
           </AnimatedButton>
         </div>
       </motion.div>
@@ -98,11 +99,12 @@ const About = () => (
       </motion.div>
       <div>
         <p className="text-lg text-gray-300 font-body mb-6 leading-relaxed">
-          I am a passionate **Machine Learning and AI Engineer** specializing in
-          Natural Language Processing (NLP), Computer Vision (CV), and
-          full-stack AI application development. My focus is on building
-          intelligent, scalable, and deployable systems that solve real-world
-          problems.
+          I am a passionate{" "}
+          <strong className="text-white">
+            Machine Learning and AI Engineer
+          </strong>{" "}
+          specializing in Natural Language Processing, Computer Vision, and
+          full-stack AI application development.
         </p>
         <p className="text-lg text-gray-300 font-body mb-8 leading-relaxed">
           From fine-tuning Large Language Models (LLMs) for specific tasks to
