@@ -14,7 +14,7 @@ export const projects = [
   {
     name: "AutoCatalogAI",
     github: "https://github.com/mdmohsin212/AutoCatalogAI",
-    live: "https://huggingface.co/spaces/mohsin416/AutoCatalogAI",
+    live: "https://mohsin416-autocatalogai.hf.space/",
     description:
       "A CLIP-based multi-task fashion cataloging system that predicts seven product attributes and generates structured metadata, achieving 87.52% average accuracy and 98.15% Top-3 accuracy.",
     tech: [
