@@ -1,7 +1,6 @@
 import React from "react";
 import {
-  SiHuggingface,
-  SiPytorch,
+  SiHuggingface,SiPytorch,
   SiScikitlearn,
   SiPython,
   SiFlask,
