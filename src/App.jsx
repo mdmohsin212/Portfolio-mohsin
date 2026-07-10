@@ -166,8 +166,8 @@ const Contact = () => (
       transition={{ duration: 0.6, type: "spring" }}
     >
       <p className="text-lg text-gray-300 font-body mb-8">
-        I'm always open to discussing new projects, creative ideas, or
-        opportunities.
+        I'm open to junior AI/ML roles, internships, research collaborations,
+        and meaningful project discussions.
       </p>
       <div className="flex justify-center flex-wrap gap-6">
         <motion.a
