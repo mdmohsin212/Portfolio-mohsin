@@ -2,76 +2,110 @@ import React from "react";
 import {
   SiHuggingface,
   SiPytorch,
-  SiTensorflow,
   SiScikitlearn,
   SiPython,
   SiFlask,
-  SiDjango,
   SiDocker,
   SiGit,
 } from "react-icons/si";
-import { FaBrain, FaCode } from "react-icons/fa";
+import { FaBrain, FaChartLine, FaEye } from "react-icons/fa";
 
 export const projects = [
+  {
+    name: "AutoCatalogAI",
+    github: "https://github.com/mdmohsin212/AutoCatalogAI",
+    live: "https://huggingface.co/spaces/mohsin416/AutoCatalogAI",
+    description:
+      "A CLIP-based multi-task fashion cataloging system that predicts seven product attributes and generates structured metadata, achieving 87.52% average accuracy and 98.15% Top-3 accuracy.",
+    tech: [
+      "PyTorch",
+      "CLIP",
+      "Multi-Task Learning",
+      "Hugging Face",
+      "Streamlit",
+    ],
+  },
   {
     name: "Visual Product Search",
     github: "https://github.com/mdmohsin212/Visual-Product-Search",
     live: "https://mohsin416-visual-products.hf.space",
     description:
-      "A computer vision-based system that allows users to search for products using images, powered by CNNs.",
-    tech: ["Computer Vision", "CNNs", "TensorFlow", "Flask"],
+      "A fashion retrieval system supporting image-to-image and text-to-image search across 44,065 products with a fine-tuned CLIP encoder and Milvus vector search.",
+    tech: ["PyTorch", "CLIP ViT-L/14", "Milvus", "Flask", "Docker"],
   },
   {
     name: "Lawverse",
     github: "https://github.com/mdmohsin212/Lawverse",
     live: "https://mohsin416-lawverse.hf.space",
     description:
-      "A legal AI platform that uses NLP to summarize, analyze, and search legal documents efficiently.",
-    tech: ["NLP", "PyTorch", "Gradio", "RAG"],
-  },
-  {
-    name: "CodeInsight",
-    github: "https://github.com/mdmohsin212/CodeInsight",
-    live: "https://mohsin416-codeinsight.hf.space",
-    description:
-      "An AI-powered code assistant that helps developers understand, document, and optimize source code using LLMs.",
-    tech: ["LLMs", "NLP", "Flask", "Hugging Face"],
+      "A RAG-based legal assistant that retrieves relevant document context before generating answers, with conversational memory, user authentication, and Dockerized Flask deployment.",
+    tech: ["RAG", "LangChain", "Gemini 2.5 Flash", "Flask", "Docker"],
   },
 ];
 
 export const skills = [
-  { name: "Python", icon: <SiPython /> },
-  { name: "PyTorch", icon: <SiPytorch /> },
-  { name: "TensorFlow", icon: <SiTensorflow /> },
-  { name: "Scikit-learn", icon: <SiScikitlearn /> },
-  { name: "LLMs", icon: <FaBrain /> },
-  { name: "NLP", icon: <FaCode /> },
-  { name: "Flask", icon: <SiFlask /> },
-  { name: "Django", icon: <SiDjango /> },
-  { name: "Docker", icon: <SiDocker /> },
-  { name: "Git", icon: <SiGit /> },
+  {
+    name: "Python",
+    icon: <SiPython />,
+  },
+  {
+    name: "PyTorch",
+    icon: <SiPytorch />,
+  },
+  {
+    name: "Hugging Face",
+    icon: <SiHuggingface />,
+  },
+  {
+    name: "CLIP / Multimodal AI",
+    icon: <FaBrain />,
+  },
+  {
+    name: "Computer Vision",
+    icon: <FaEye />,
+  },
+  {
+    name: "Scikit-learn",
+    icon: <SiScikitlearn />,
+  },
+  {
+    name: "Model Evaluation",
+    icon: <FaChartLine />,
+  },
+  {
+    name: "Flask / Streamlit",
+    icon: <SiFlask />,
+  },
+  {
+    name: "Docker",
+    icon: <SiDocker />,
+  },
+  {
+    name: "Git",
+    icon: <SiGit />,
+  },
 ];
 
 export const experiences = [
   {
-    title: "LLM Fine-Tuning & RAG",
+    title: "Computer Vision & Multimodal Systems",
     description:
-      "Engineered multiple projects involving fine-tuning LLMs (e.g., Llama 2, Mistral) for code generation and legal domain adaptation. Implemented RAG pipelines for knowledge assistants.",
+      "Built deployable CLIP-based systems for fashion retrieval and multi-task product cataloging, covering domain fine-tuning, embedding search, and structured attribute prediction.",
   },
   {
-    title: "Full-Stack AI Applications",
+    title: "Model Evaluation & Experimentation",
     description:
-      "Developed and deployed end-to-end AI applications, integrating ML models (CV & NLP) into backends using Flask/Django and serving them via interactive UIs.",
+      "Designed held-out evaluations using Precision, Recall, F1, Top-K, and exact-match metrics, with baseline comparisons, error analysis, and latency benchmarking.",
   },
   {
-    title: "MLOps Integration",
+    title: "AI Application Deployment",
     description:
-      "Built MLOps pipelines for visual product search, automating model training, versioning (DVC), and deployment (Docker, Hugging Face Spaces).",
+      "Integrated PyTorch models into Flask and Streamlit applications and deployed reproducible services with Docker, Hugging Face Hub, and Hugging Face Spaces.",
   },
   {
     title: "Competitive Programming",
     description:
-      "Solved 450+ problems on platforms like LeetCode and Codeforces, strengthening my foundation in data structures and algorithms.",
+      "Solved 500+ data structures and algorithms problems across Codeforces, CodeChef, LeetCode, Coding Ninjas, and HackerRank.",
   },
 ];
 
@@ -83,8 +117,20 @@ export const socialLinks = {
 };
 
 export const navLinks = [
-  { name: "Projects", href: "#projects" },
-  { name: "About", href: "#about" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  {
+    name: "Projects",
+    href: "#projects",
+  },
+  {
+    name: "About",
+    href: "#about",
+  },
+  {
+    name: "Experience",
+    href: "#experience",
+  },
+  {
+    name: "Contact",
+    href: "#contact",
+  },
 ];
